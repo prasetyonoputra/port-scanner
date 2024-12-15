@@ -28,12 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            label1 = new Label();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            button1 = new Button();
+            numericUpDown1 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
+            textBox2 = new TextBox();
+            progressBar1 = new ProgressBar();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(28, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(30, 28);
+            label1.TabIndex = 0;
+            label1.Text = "IP";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(76, 46);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(237, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(28, 104);
+            label2.Name = "label2";
+            label2.Size = new Size(69, 28);
+            label2.TabIndex = 2;
+            label2.Text = "FROM";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(204, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 28);
+            label3.TabIndex = 3;
+            label3.Text = "TO";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(188, 156);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 42);
+            button1.TabIndex = 4;
+            button1.Text = "SCAN";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(103, 104);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(65, 27);
+            numericUpDown1.TabIndex = 5;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(248, 105);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(65, 27);
+            numericUpDown2.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(333, 46);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(237, 152);
+            textBox2.TabIndex = 7;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(333, 221);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(237, 29);
+            progressBar1.TabIndex = 8;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(599, 286);
+            Controls.Add(progressBar1);
+            Controls.Add(textBox2);
+            Controls.Add(numericUpDown2);
+            Controls.Add(numericUpDown1);
+            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private TextBox textBox1;
+        private Label label2;
+        private Label label3;
+        private Button button1;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDown2;
+        private TextBox textBox2;
+        private ProgressBar progressBar1;
     }
 }
