@@ -87,6 +87,7 @@
             button1.TabIndex = 4;
             button1.Text = "SCAN";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // numericUpDown1
             // 
@@ -94,7 +95,6 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(65, 27);
             numericUpDown1.TabIndex = 5;
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // numericUpDown2
             // 
@@ -110,6 +110,8 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(237, 152);
             textBox2.TabIndex = 7;
+            textBox2.ReadOnly = true;
+            textBox2.ScrollBars = ScrollBars.Vertical;
             // 
             // progressBar1
             // 
