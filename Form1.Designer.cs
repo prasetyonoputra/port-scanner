@@ -37,6 +37,7 @@
             numericUpDown2 = new NumericUpDown();
             textBox2 = new TextBox();
             progressBar1 = new ProgressBar();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
@@ -92,6 +93,7 @@
             // numericUpDown1
             // 
             numericUpDown1.Location = new Point(103, 104);
+            numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(65, 27);
             numericUpDown1.TabIndex = 5;
@@ -99,6 +101,7 @@
             // numericUpDown2
             // 
             numericUpDown2.Location = new Point(248, 105);
+            numericUpDown2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(65, 27);
             numericUpDown2.TabIndex = 6;
@@ -108,10 +111,10 @@
             textBox2.Location = new Point(333, 46);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(237, 152);
-            textBox2.TabIndex = 7;
             textBox2.ReadOnly = true;
             textBox2.ScrollBars = ScrollBars.Vertical;
+            textBox2.Size = new Size(237, 152);
+            textBox2.TabIndex = 7;
             // 
             // progressBar1
             // 
@@ -120,11 +123,22 @@
             progressBar1.Size = new Size(237, 29);
             progressBar1.TabIndex = 8;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(12, 239);
+            label4.Name = "label4";
+            label4.Size = new Size(117, 38);
+            label4.TabIndex = 9;
+            label4.Text = "STATUS";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(599, 286);
+            Controls.Add(label4);
             Controls.Add(progressBar1);
             Controls.Add(textBox2);
             Controls.Add(numericUpDown2);
@@ -153,5 +167,6 @@
         private NumericUpDown numericUpDown2;
         private TextBox textBox2;
         private ProgressBar progressBar1;
+        private Label label4;
     }
 }

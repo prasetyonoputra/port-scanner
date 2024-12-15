@@ -13,10 +13,10 @@ namespace port_scanner
 
             textBox1.Text = "192.168.0.1";
             numericUpDown1.Value = 1;
-            numericUpDown2.Value = 10;
+            numericUpDown2.Value = 5;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             startPort = Convert.ToInt32(numericUpDown1.Value);
             endPort = Convert.ToInt32(numericUpDown2.Value);
@@ -26,27 +26,33 @@ namespace port_scanner
 
             Cursor.Current = Cursors.WaitCursor;
             textBox2.Clear();
+            label4.Text = "SCANNING...";
 
-            for (int i = startPort; i <= endPort; i++) 
-            { 
-                TcpClient tcpClient = new TcpClient();
-
-                try
+            for (int i = startPort; i <= endPort; i++)
+            {
+                await Task.Run(() =>
                 {
-                    tcpClient.Connect(textBox1.Text, i);
-                    textBox2.AppendText("Port " + i + " open\r\n");
-                } 
-                catch
-                {
-                    textBox2.AppendText("Port " + i + " closed\r\n");
-                }
-                finally
-                {
-                    progressBar1.PerformStep();
-                }
+                    TcpClient tcpClient = new TcpClient();
+                    try
+                    {
+                        tcpClient.Connect(textBox1.Text, i);
+                        Invoke(new Action(() => textBox2.AppendText($"Port {i} open\r\n")));
+                    }
+                    catch
+                    {
+                        Invoke(new Action(() => textBox2.AppendText($"Port {i} closed\r\n")));
+                    }
+                    finally
+                    {
+                        tcpClient.Close();
+                        Invoke(new Action(() => progressBar1.PerformStep()));
+                    }
+                });
             }
 
-            Cursor.Current = Cursors.Arrow;
+            Cursor.Current = Cursors.Default;
+            textBox2.AppendText("Pemindaian telah selesai.\r\n");
+            label4.Text = "SELESAI";
         }
     }
 }
